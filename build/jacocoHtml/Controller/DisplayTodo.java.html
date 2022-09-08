@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DisplayTodo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">hw9</a> &gt; <a href="index.source.html" class="el_package">Controller</a> &gt; <span class="el_source">DisplayTodo.java</span></div><h1>DisplayTodo.java</h1><pre class="source lang-java linenums">package Controller;
+
+
+import java.util.Objects;
+
+/**
+ * Class DisplayTodo represents the information of one &quot;display to do&quot; command
+ */
+public class DisplayTodo {
+  private Boolean isDisplay;
+  private Boolean isShowIncomplete;
+  private String showCategory;
+  private Boolean isSortByDate;
+  private Boolean isSortByPriority;
+
+  /**
+   * Constructs a DisplayTodo.
+   * @param isDisplay - whether the display command is asked, as Boolean.
+   * @param isShowIncomplete - whether the show incomplete command is asked, as Boolean.
+   * @param showCategory - whether the show category command is asked, as String.
+   * @param isSortByDate - whether the sort by date command is asked, as Boolean.
+   * @param isSortByPriority - whether the sort by priority command is asked, as Boolean.
+   */
+  public DisplayTodo(Boolean isDisplay, Boolean isShowIncomplete, String showCategory, Boolean isSortByDate,
+<span class="fc" id="L25">      Boolean isSortByPriority) {</span>
+<span class="fc" id="L26">    this.isDisplay = isDisplay;</span>
+<span class="fc" id="L27">    this.isShowIncomplete = isShowIncomplete;</span>
+<span class="fc" id="L28">    this.showCategory = showCategory;</span>
+<span class="fc" id="L29">    this.isSortByDate = isSortByDate;</span>
+<span class="fc" id="L30">    this.isSortByPriority = isSortByPriority;</span>
+<span class="fc" id="L31">  }</span>
+
+  /**
+   * Getter for isDisplay.
+   * @return - the value of isDisplay, as Boolean.
+   */
+  public Boolean getDisplay() {
+<span class="fc" id="L38">    return isDisplay;</span>
+  }
+
+  /**
+   * Getter for isShowIncomplete.
+   * @return - the value of isShowIncomplete, as Boolean.
+   */
+  public Boolean getShowIncomplete() {
+<span class="fc" id="L46">    return isShowIncomplete;</span>
+  }
+
+  /**
+   * Getter for showCategory.
+   * @return - the value of showCategory, as String.
+   */
+  public String getShowCategory() {
+<span class="fc" id="L54">    return showCategory;</span>
+  }
+
+  /**
+   * Getter for isSortByDate.
+   * @return - the value of isSortByDate, as Boolean.
+   */
+  public Boolean getSortByDate() {
+<span class="fc" id="L62">    return isSortByDate;</span>
+  }
+
+  /**
+   * Getter for isSortByPriority.
+   * @return - the value of isSortByPriority, as Boolean.
+   */
+  public Boolean getSortByPriority() {
+<span class="fc" id="L70">    return isSortByPriority;</span>
+  }
+
+  /**
+   * Check if this object is equal to the given object
+   * @param o - the given object
+   * @return true if this object is equal to the given object, and false otherwise
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L80" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L81">      return true;</span>
+    }
+<span class="fc bfc" id="L83" title="All 4 branches covered.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="fc" id="L84">      return false;</span>
+    }
+<span class="fc" id="L86">    DisplayTodo that = (DisplayTodo) o;</span>
+<span class="fc bfc" id="L87" title="All 4 branches covered.">    return Objects.equals(isDisplay, that.isDisplay) &amp;&amp; Objects.equals(</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        isShowIncomplete, that.isShowIncomplete) &amp;&amp; Objects.equals(showCategory,</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        that.showCategory) &amp;&amp; Objects.equals(isSortByDate, that.isSortByDate)</span>
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        &amp;&amp; Objects.equals(isSortByPriority, that.isSortByPriority);</span>
+  }
+
+  /**
+   * Get the hashcode of this object
+   * @return the hashcode of this object
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L99">    return Objects.hash(isDisplay, isShowIncomplete, showCategory, isSortByDate, isSortByPriority);</span>
+  }
+
+  /**
+   * Get the string of the object
+   * @return the string of the object
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L108">    return &quot;DisplayTodo{&quot; +</span>
+        &quot;isDisplay=&quot; + isDisplay +
+        &quot;, isShowIncomplete=&quot; + isShowIncomplete +
+        &quot;, showCategory='&quot; + showCategory + '\'' +
+        &quot;, isSortByDate=&quot; + isSortByDate +
+        &quot;, isSortByPriority=&quot; + isSortByPriority +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

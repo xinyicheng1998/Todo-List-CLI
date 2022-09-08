@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Model.TodoTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2022-04-26T00:11:22" hostname="Tigers-MacBook-Air.local" time="0.046">
+  <properties/>
+  <testcase name="testEquals_DifferentCategory()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="testConstructor_NullPriority()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="getCompleted()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="getDue()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="testToString()" classname="Model.TodoTest" time="0.002"/>
+  <testcase name="testEquals_SameMemoryAddress()" classname="Model.TodoTest" time="0.002"/>
+  <testcase name="testEquals_DifferentCompleted()" classname="Model.TodoTest" time="0.0"/>
+  <testcase name="getText()" classname="Model.TodoTest" time="0.0"/>
+  <testcase name="getId()" classname="Model.TodoTest" time="0.0"/>
+  <testcase name="setId()" classname="Model.TodoTest" time="0.0"/>
+  <testcase name="setCompleted()" classname="Model.TodoTest" time="0.002"/>
+  <testcase name="testEquals_DifferentDataType()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="testEquals_DifferentID()" classname="Model.TodoTest" time="0.002"/>
+  <testcase name="testEquals_DifferentText()" classname="Model.TodoTest" time="0.002"/>
+  <testcase name="testHashCode()" classname="Model.TodoTest" time="0.0"/>
+  <testcase name="getPriority()" classname="Model.TodoTest" time="0.002"/>
+  <testcase name="testConstructor_ValidPriority()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="testEquals_SameFieldsOverall()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="testConstructor_LowerPriority_Exception()" classname="Model.TodoTest" time="0.002"/>
+  <testcase name="testEquals_DifferentPriority()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="testConstructor_HigherPriority_Exception()" classname="Model.TodoTest" time="0.003"/>
+  <testcase name="testEquals_DifferentDue()" classname="Model.TodoTest" time="0.001"/>
+  <testcase name="getCategory()" classname="Model.TodoTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CmdParserAdd.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">hw9</a> &gt; <a href="index.source.html" class="el_package">Controller</a> &gt; <span class="el_source">CmdParserAdd.java</span></div><h1>CmdParserAdd.java</h1><pre class="source lang-java linenums">package Controller;
+
+import Model.InvalidTodoException;
+import Model.Todo;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * CmdParserAdd represents a class that checks the part of &quot;add to do&quot; of a command line.
+ */
+public class CmdParserAdd implements ICmdParser&lt;Todo&gt; {
+
+  private static final String ADD = &quot;--add-todo&quot;;
+  private static final String TEXT = &quot;--todo-text&quot;;
+  private static final String COMPLETED = &quot;--completed&quot;;
+  private static final String DUE = &quot;--due&quot;;
+  private static final String PRIORITY = &quot;--priority&quot;;
+  private static final String CATEGORY = &quot;--category&quot;;
+
+  /**
+   * Constructs a CmdParserAdd.
+   */
+<span class="fc" id="L26">  public CmdParserAdd() {</span>
+<span class="fc" id="L27">  }</span>
+
+  /**
+   * Checks whether the given command line contains &quot;add to do&quot; command and whether it is valid if
+   * it contains
+   *
+   * @param args - the input from the user.
+   * @return - object AddTodo, contains information of this &quot;add to do&quot; command
+   * @throws InvalidArgumentsException - catches invalid arguments.
+   */
+  public Todo parse(String[] args) throws InvalidArgumentsException, InvalidTodoException {
+<span class="fc" id="L38">    List&lt;String&gt; commandList = Arrays.asList(args);</span>
+<span class="fc" id="L39">    String description = null;</span>
+<span class="fc" id="L40">    Boolean isCompleted = null;</span>
+<span class="fc" id="L41">    LocalDate dueDate = null;</span>
+<span class="fc" id="L42">    Integer priority = null;</span>
+<span class="fc" id="L43">    String category = null;</span>
+
+    //it may contain at most one &quot;add to do&quot; command
+<span class="fc bfc" id="L46" title="All 2 branches covered.">    if (commandList.contains(ADD)) {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">      if (Collections.frequency(commandList, ADD) == 1) {</span>
+        //if it contains one &quot;add to do&quot; command
+        //it must contain &quot;add-text&quot; command
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (commandList.contains(TEXT)) {</span>
+          //get description of the text if it is valid
+<span class="fc" id="L52">          description = this.getDescription(commandList);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">          if (commandList.contains(COMPLETED)) {</span>
+<span class="fc" id="L54">            isCompleted = Boolean.TRUE;</span>
+          }
+<span class="fc" id="L56">          dueDate = this.getDue(commandList);</span>
+<span class="fc" id="L57">          priority = this.getPriority(commandList);</span>
+<span class="fc" id="L58">          category = this.getCategory(commandList);</span>
+        } else {
+<span class="fc" id="L60">          throw new InvalidArgumentsException(&quot;A description of the new todo is required&quot;);</span>
+        }
+      } else {
+<span class="fc" id="L63">        throw new InvalidArgumentsException(&quot;Only one Add todo is accepted in one command&quot;);</span>
+      }
+<span class="fc" id="L65">      Todo newTodo = new Todo.Builder(description)</span>
+<span class="fc" id="L66">          .addCompleted(isCompleted)</span>
+<span class="fc" id="L67">          .addDue(dueDate)</span>
+<span class="fc" id="L68">          .addPriority(priority)</span>
+<span class="fc" id="L69">          .addCategory(category)</span>
+<span class="fc" id="L70">          .build();</span>
+<span class="fc" id="L71">      return newTodo;</span>
+    } else {
+<span class="fc" id="L73">      return null;</span>
+    }
+  }
+
+  /**
+   * Helper method checks whether the command line contains a valid description.
+   *
+   * @param command - the command line from user, as List&lt;String&gt;
+   * @return - description of the text, as String
+   * @throws InvalidArgumentsException - catches invalid arguments.
+   */
+  private String getDescription(List&lt;String&gt; command) throws InvalidArgumentsException {
+<span class="fc" id="L85">    int index = command.indexOf(TEXT);</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">    if ((index + 1) &gt; command.size() - 1) {</span>
+<span class="fc" id="L87">      throw new InvalidArgumentsException(</span>
+          &quot;todo-text command is at the end, no description follows&quot;);
+    }
+<span class="fc" id="L90">    return command.get(index + 1);</span>
+  }
+
+  /**
+   * Helper method checks whether the command line contains a valid due.
+   *
+   * @param command - the command line from user, as List&lt;String&gt;
+   * @return - due date of add to do, as String
+   * @throws InvalidArgumentsException - catches invalid arguments.
+   */
+  private LocalDate getDue(List&lt;String&gt; command) throws InvalidArgumentsException {
+<span class="fc bfc" id="L101" title="All 2 branches covered.">    if (command.contains(DUE)) {</span>
+<span class="fc" id="L102">      int index = command.indexOf(DUE);</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">      if ((index + 1) &gt; command.size() - 1) {</span>
+<span class="fc" id="L104">        throw new InvalidArgumentsException(&quot;due of add command is at the end, no date follows&quot;);</span>
+      }
+<span class="fc" id="L106">      return this.convertDate(command.get(index + 1));</span>
+    } else {
+<span class="fc" id="L108">      return null;</span>
+    }
+  }
+
+  /**
+   * Checks whether is a valid date and convert to LocalDate. the valid format is: yyyy-mm-dd
+   *
+   * @param date - the given end date, as String.
+   * @return - end date, as LocalDate
+   */
+  private LocalDate convertDate(String date) throws InvalidArgumentsException {
+<span class="fc" id="L119">    LocalDate dueDate = null;</span>
+    try {
+<span class="fc" id="L121">      dueDate = LocalDate.parse(date);</span>
+<span class="fc" id="L122">    } catch (DateTimeParseException e) {</span>
+<span class="fc" id="L123">      throw new InvalidArgumentsException(</span>
+          &quot;given due date is invalid, format yyyy-mm-dd is expected&quot;);
+<span class="fc" id="L125">    }</span>
+<span class="fc" id="L126">    return dueDate;</span>
+  }
+
+  /**
+   * Helper method checks whether the command line contains a valid priority.
+   *
+   * @param command - the command line from user, as List&lt;String&gt;
+   * @return - priority of add to do, as Integer
+   * @throws InvalidArgumentsException - catches invalid arguments.
+   */
+  private Integer getPriority(List&lt;String&gt; command) throws InvalidArgumentsException {
+<span class="fc bfc" id="L137" title="All 2 branches covered.">    if (command.contains(PRIORITY)) {</span>
+<span class="fc" id="L138">      int index = command.indexOf(PRIORITY);</span>
+<span class="fc bfc" id="L139" title="All 2 branches covered.">      if ((index + 1) &gt; command.size() - 1) {</span>
+<span class="fc" id="L140">        throw new InvalidArgumentsException(</span>
+            &quot;priority of add command is at the end, no number follows&quot;);
+      }
+      try {
+<span class="fc" id="L144">        return Integer.parseInt(command.get(index + 1));</span>
+<span class="fc" id="L145">      } catch (NumberFormatException nfe) {</span>
+<span class="fc" id="L146">        throw new InvalidArgumentsException(&quot;An integer is required after priority command&quot;);</span>
+      }
+    } else {
+<span class="fc" id="L149">      return null;</span>
+    }
+  }
+
+  /**
+   * Helper method checks whether the command line contains a valid category.
+   *
+   * @param command - the command line from user, as List&lt;String&gt;
+   * @return - category of add to do, as String
+   * @throws InvalidArgumentsException - catches invalid arguments.
+   */
+  private String getCategory(List&lt;String&gt; command) throws InvalidArgumentsException {
+<span class="fc bfc" id="L161" title="All 2 branches covered.">    if (command.contains(CATEGORY)) {</span>
+<span class="fc" id="L162">      int index = command.indexOf(CATEGORY);</span>
+<span class="fc bfc" id="L163" title="All 2 branches covered.">      if ((index + 1) &gt; command.size() - 1) {</span>
+<span class="fc" id="L164">        throw new InvalidArgumentsException(</span>
+            &quot;category of add command is at the end, no string follows&quot;);
+      }
+<span class="fc" id="L167">      return command.get(index + 1);</span>
+    } else {
+<span class="fc" id="L169">      return null;</span>
+    }
+  }
+
+  /**
+   * Get the string of the object
+   *
+   * @return the string of the object
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L180">    return &quot;CmdParserAdd{}&quot;;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

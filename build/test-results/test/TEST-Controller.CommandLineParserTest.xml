@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Controller.CommandLineParserTest" tests="35" skipped="0" failures="0" errors="0" timestamp="2022-04-26T00:11:22" hostname="Tigers-MacBook-Air.local" time="0.089">
+  <properties/>
+  <testcase name="testToString_CmdParserDisplay()" classname="Controller.CommandLineParserTest" time="0.003"/>
+  <testcase name="testDisplayTodo_equalsSameObject()" classname="Controller.CommandLineParserTest" time="0.002"/>
+  <testcase name="testDisplayTodo_getDisplay()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testDisplayTodo_equalsDifferentObject()" classname="Controller.CommandLineParserTest" time="0.004"/>
+  <testcase name="testDisplayTodo_hashcode()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testCMDInvalid10()" classname="Controller.CommandLineParserTest" time="0.012"/>
+  <testcase name="testCMDInvalid11()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid12()" classname="Controller.CommandLineParserTest" time="0.003"/>
+  <testcase name="testCMDInvalid13()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testCMDInvalid14()" classname="Controller.CommandLineParserTest" time="0.004"/>
+  <testcase name="testCMDInvalid15()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testCMDInvalid16()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid17()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testToString_CommandLineParser()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testDisplayTodo_equalsDifferentAttribute1()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testDisplayTodo_equalsDifferentAttribute2()" classname="Controller.CommandLineParserTest" time="0.003"/>
+  <testcase name="testDisplayTodo_equalsDifferentAttribute3()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testDisplayTodo_equalsDifferentAttribute4()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testDisplayTodo_equalsDifferentAttribute5()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testToString_CmdParserComplete()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testToString_CmdParserAdd()" classname="Controller.CommandLineParserTest" time="0.002"/>
+  <testcase name="testToString_CmdParserCSV()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testDisplayTodo_toString()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDValid1()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDValid2()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid1()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testCMDInvalid2()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid3()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid4()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <testcase name="testCMDInvalid5()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid6()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid7()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid8()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testCMDInvalid9()" classname="Controller.CommandLineParserTest" time="0.001"/>
+  <testcase name="testDisplayTodo_equalsNullObject()" classname="Controller.CommandLineParserTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

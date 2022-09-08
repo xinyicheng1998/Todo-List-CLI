@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="View.DisplayerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-26T00:11:22" hostname="Tigers-MacBook-Air.local" time="0.012">
+  <properties/>
+  <testcase name="run()" classname="View.DisplayerTest" time="0.012"/>
+  <system-out><![CDATA[Model.Todo{id=2, text='sample2', completed=false, due=2020-01-01, priority=2, category='null'}
+Model.Todo{id=1, text='sample1', completed=false, due=2022-04-25, priority=3, category='null'}
+Model.Todo{id=3, text='sample3', completed=false, due=null, priority=3, category='null'}
+Model.Todo{id=3, text='sample3', completed=false, due=null, priority=3, category='null'}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
