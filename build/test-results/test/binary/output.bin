@@ -1,4 +1,0 @@
-RQ_Model.Todo{id=2, text='sample2', completed=false, due=2020-01-01, priority=2, category='null'}
-RQ_Model.Todo{id=1, text='sample1', completed=false, due=2022-04-25, priority=3, category='null'}
-RQYModel.Todo{id=3, text='sample3', completed=false, due=null, priority=3, category='null'}
-RQYModel.Todo{id=3, text='sample3', completed=false, due=null, priority=3, category='null'}

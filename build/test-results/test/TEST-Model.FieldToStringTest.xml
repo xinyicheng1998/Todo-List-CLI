@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Model.FieldToStringTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-04-26T00:11:22" hostname="Tigers-MacBook-Air.local" time="0.004">
-  <properties/>
-  <testcase name="todoToString_NotNull()" classname="Model.FieldToStringTest" time="0.002"/>
-  <testcase name="todoToString_null()" classname="Model.FieldToStringTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
